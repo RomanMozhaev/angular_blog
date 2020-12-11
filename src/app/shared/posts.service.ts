@@ -9,6 +9,7 @@ import {map} from 'rxjs/operators';
 export class PostsService {
   constructor(private http: HttpClient) {
   }
+
   create(post: Post): Observable<Post> {
     return this.http.post(`${environment.fbDbUrl}/posts.json`, post)
       .pipe(map((response: FbCreateResponse) => {
