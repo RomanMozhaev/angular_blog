@@ -10,11 +10,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {AuthGuard} from './shared/services/auth.guard';
 import {SearchPipe} from './shared/search.pipe';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import {AlertService} from './shared/services/alert.service';
 
 @NgModule({
   declarations: [AdminLayoutComponent, LoginPageComponent,
     DashboardPageComponent, CreatePageComponent,
-    EditPageComponent, SearchPipe],
+    EditPageComponent, SearchPipe, AlertComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -33,7 +35,7 @@ import {SearchPipe} from './shared/search.pipe';
     ])
   ],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard, AlertService]
 
 })
 export class AdminModule {
